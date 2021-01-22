@@ -13,12 +13,7 @@ class NotificationsScreen extends StatelessWidget
       textDirection: appDirection(context),
       child: Scaffold(
         appBar: DefaultAppBar(
-          title: Text(
-            languageModel(context).notifications,
-            style: black18().copyWith(
-              color: isAppDark(context) ? Colors.white : Colors.black,
-            ),
-          ),
+          titleText: languageModel(context).notifications,
           leading: true,
           context: context,
         ),
@@ -26,11 +21,14 @@ class NotificationsScreen extends StatelessWidget
           padding: const EdgeInsets.all(
             20.0,
           ),
-          child: ListView.builder(
+          child: ListView.separated(
             physics: BouncingScrollPhysics(),
             itemBuilder: (context, index) => buildNotificationItem(
               context: context,
               type: index%2==1 ? 'add' : 'follow',
+            ),
+            separatorBuilder: (context, index) => SizedBox(
+              height: 15.0,
             ),
             itemCount: 20,
           ),
@@ -89,72 +87,64 @@ class NotificationsScreen extends StatelessWidget
         break;
     }
 
-    return Column(
+    return InkWell(
+      onTap: ()
+      {
+
+      },
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children:
         [
-          InkWell(
-            onTap: ()
-            {
-
-            },
-            child: Row(
+          icon,
+          SizedBox(
+            width: 20.0,
+          ),
+          Expanded(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:
-              [
-                icon,
-                SizedBox(
-                  width: 20.0,
+              children: [
+                Text(
+                  languageModel(context).notificationTitle,
+                  style: black14Bold(),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        languageModel(context).notificationTitle,
-                        style: black14Bold(),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(
-                        height: 3.0,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children:
-                        [
-                          Icon(
-                            IconBroken.Time_Circle,
-                            size: 15.0,
-                            color: Colors.grey,
-                          ),
-                          SizedBox(
-                            width: 5.0,
-                          ),
-                          Text(
-                            languageModel(context).notificationDate,
-                            style: grey12(),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 15.0,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        height: 1.0,
-                        color: isAppDark(context) ? Colors.black12 : Colors.grey[200],
-                      ),
-                    ],
-                  ),
+                SizedBox(
+                  height: 3.0,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children:
+                  [
+                    Icon(
+                      IconBroken.Time_Circle,
+                      size: 15.0,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      languageModel(context).notificationDate,
+                      style: grey12(),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 1.0,
+                  color: isAppDark(context) ? Colors.black12 : Colors.grey[200],
                 ),
               ],
             ),
           ),
-          SizedBox(
-            height: 15.0,
-          ),
         ],
-      );
+      ),
+    );
   }
 
   // Widget demo()=> Column(

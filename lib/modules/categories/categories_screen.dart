@@ -13,12 +13,7 @@ class CategoriesScreen extends StatelessWidget
   {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: Text(
-          languageModel(context).categories,
-          style: black18().copyWith(
-            color: isAppDark(context) ? Colors.white : Colors.black,
-          ),
-        ),
+        titleText: languageModel(context).categories,
         notifications: true,
         context: context,
       ),

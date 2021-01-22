@@ -13,12 +13,7 @@ class FavouritesScreen extends StatelessWidget
   {
     return Scaffold(
       appBar: DefaultAppBar(
-        title: Text(
-          languageModel(context).favourites,
-          style: black18().copyWith(
-            color: isAppDark(context) ? Colors.white : Colors.black,
-          ),
-        ),
+        titleText: languageModel(context).favourites,
         notifications: true,
         context: context,
       ),

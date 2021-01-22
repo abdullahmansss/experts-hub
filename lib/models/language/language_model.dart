@@ -32,6 +32,8 @@ class LanguageModel
   final String notifications;
   final String notificationTitle;
   final String notificationDate;
+  final String addHeader;
+  final String addBody;
 
   LanguageModel({
     this.languageHead,
@@ -64,6 +66,8 @@ class LanguageModel
     this.notifications,
     this.notificationTitle,
     this.notificationDate,
+    this.addHeader,
+    this.addBody,
   });
 
   factory LanguageModel.fromJson(data)
@@ -101,6 +105,8 @@ class LanguageModel
       notifications: json['notifications'] as String,
       notificationTitle: json['notificationTitle'] as String,
       notificationDate: json['notificationDate'] as String,
+      addHeader: json['addHeader'] as String,
+      addBody: json['addBody'] as String,
     );
   }
 }

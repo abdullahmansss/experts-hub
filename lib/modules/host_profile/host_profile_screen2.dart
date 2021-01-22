@@ -34,33 +34,35 @@ class HostProfile2Screen extends StatelessWidget {
                     width: double.infinity,
                     height: 300.0,
                     color: Colors.black54,
-                    padding: EdgeInsets.only(top: 20.0,),
+                    padding: EdgeInsets.only(top: 30.0,),
                     alignment: AlignmentDirectional.topStart,
                     child: leadingButton(context, color: true,),
                   ),
                   Column(
                     children: [
-                      InkWell(
-                        onTap: () {},
-                        customBorder: CircleBorder(),
-                        child: Container(
-                          width: 80.0,
-                          height: 80.0,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/81727508_2965855293434298_4340058684466921472_o.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeGoWzSlyw4XnrDUnkSm5T2Oe4ucBJq_mnB7i5wEmr-acDI3y91mts0Q3aucvvWPaPf1Kc3x5iuI8fVWEks7k17P&_nc_ohc=6iwiJA2s3qsAX9ttcpp&_nc_ht=scontent.fcai20-2.fna&oh=17da9303f4e3d377d96fefb227a9d0dd&oe=602B003D'),
-                              fit: BoxFit.cover,
-                            ),
-                            shape: BoxShape.circle,
+                      Container(
+                        width: 80.0,
+                        height: 80.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                'https://scontent.fcai20-2.fna.fbcdn.net/v/t1.0-9/81727508_2965855293434298_4340058684466921472_o.jpg?_nc_cat=102&ccb=2&_nc_sid=09cbfe&_nc_eui2=AeGoWzSlyw4XnrDUnkSm5T2Oe4ucBJq_mnB7i5wEmr-acDI3y91mts0Q3aucvvWPaPf1Kc3x5iuI8fVWEks7k17P&_nc_ohc=6iwiJA2s3qsAX9ttcpp&_nc_ht=scontent.fcai20-2.fna&oh=17da9303f4e3d377d96fefb227a9d0dd&oe=602B003D'),
+                            fit: BoxFit.cover,
                           ),
+                          shape: BoxShape.circle,
                         ),
+                      ),
+                      SizedBox(
+                        height: 15.0,
                       ),
                       Text(
                         'Abdullah Mansour',
                         style: black18Bold().copyWith(
                           color: Colors.white,
                         ),
+                      ),
+                      SizedBox(
+                        height: 3.0,
                       ),
                       Text(
                         'IT Entrepreneur',

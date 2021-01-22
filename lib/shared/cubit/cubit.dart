@@ -114,6 +114,8 @@ class AppCubit extends Cubit<AppStates>
 
     if(code != null)
     {
+      if(code=='en')
+        changeAppFontFamily(family: 'SFProDisplay');
       currentAppLanguage = code;
       textDirection = code == 'ar' ? TextDirection.rtl : TextDirection.ltr;
     }

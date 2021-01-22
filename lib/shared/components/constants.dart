@@ -53,6 +53,7 @@ void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
 
 AppBar DefaultAppBar({
   Widget title,
+  String titleText,
   bool leading = false,
   bool notifications = false,
   bool search = false,
@@ -68,7 +69,12 @@ AppBar DefaultAppBar({
           : leading
               ? leadingButton(context)
               : null,
-      title: title,
+      title: titleText != null ? Text(
+        titleText,
+        style: black18().copyWith(
+          color: isAppDark(context) ? Colors.white : Colors.black,
+        ),
+      ) : title,
       actions: actions ??
           [
             if (search) searchButton(context),

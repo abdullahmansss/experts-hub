@@ -21,12 +21,7 @@ class SettingsScreen extends StatelessWidget
       builder: (context, state) {
         return Scaffold(
           appBar: DefaultAppBar(
-            title: Text(
-              languageModel(context).settings,
-              style: black18().copyWith(
-                color: isAppDark(context) ? Colors.white : Colors.black,
-              ),
-            ),
+            titleText: languageModel(context).settings,
             context: context,
           ),
           body: Padding(
@@ -105,11 +100,11 @@ class SettingsScreen extends StatelessWidget
                   ),
                 ),
                 SizedBox(
-                  height: 10.0,
+                  height: 15.0,
                 ),
                 Text(
                   'Abdullah Mansour',
-                  style: black14().copyWith(
+                  style: black14Bold().copyWith(
                     color: isAppDark(context) ? Colors.white : Colors.black,
                   ),
                 ),
