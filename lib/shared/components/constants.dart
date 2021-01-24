@@ -64,6 +64,7 @@ AppBar DefaultAppBar({
 }) =>
     AppBar(
       titleSpacing: 20.0,
+      centerTitle: false,
       leading: leadingIcon != null
           ? leadingIcon
           : leading
