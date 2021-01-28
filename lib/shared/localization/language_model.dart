@@ -13,7 +13,9 @@ class LanguageModel
   final String skip;
   final String phoneAuthMessage;
   final String phoneNumber;
+  final String verificationCode;
   final String sendCode;
+  final String submit;
   final String loginFacebook;
   final String completeProfile;
   final String seeProfile;
@@ -47,7 +49,9 @@ class LanguageModel
     this.skip,
     this.phoneAuthMessage,
     this.phoneNumber,
+    this.verificationCode,
     this.sendCode,
+    this.submit,
     this.loginFacebook,
     this.completeProfile,
     this.seeProfile,
@@ -86,7 +90,9 @@ class LanguageModel
       skip: json['skip'] as String,
       phoneAuthMessage: json['phoneAuthMessage'] as String,
       phoneNumber: json['phoneNumber'] as String,
+      verificationCode: json['verificationCode'] as String,
       sendCode: json['sendCode'] as String,
+      submit: json['submit'] as String,
       loginFacebook: json['loginFacebook'] as String,
       completeProfile: json['completeProfile'] as String,
       seeProfile: json['seeProfile'] as String,

@@ -7,7 +7,7 @@ import 'package:softagi/modules/settings/settings_screen.dart';
 import 'package:softagi/shared/components/constants.dart';
 import 'package:softagi/shared/cubit/cubit.dart';
 import 'package:softagi/shared/cubit/states.dart';
-import 'package:softagi/shared/icon_broken.dart';
+import 'package:softagi/shared/styles/icon_broken.dart';
 
 class HomeLayout extends StatefulWidget {
   @override

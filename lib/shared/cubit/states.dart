@@ -13,3 +13,9 @@ class AppStateSetAppFontFamily extends AppStates{}
 class AppStateSetAppThemeMode extends AppStates{}
 
 class AppStateChangeAppThemeMode extends AppStates{}
+
+class AppStateGetHomeDataSuccess extends AppStates{}
+
+class AppStateRefreshHomeDataSuccess extends AppStates{}
+
+class AppStateGetHomeDataError extends AppStates{}

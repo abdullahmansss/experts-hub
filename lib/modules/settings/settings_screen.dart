@@ -9,7 +9,7 @@ import 'package:softagi/shared/components/constants.dart';
 
 import 'package:softagi/shared/cubit/cubit.dart';
 import 'package:softagi/shared/cubit/states.dart';
-import 'package:softagi/shared/icon_broken.dart';
+import 'package:softagi/shared/styles/icon_broken.dart';
 import 'package:softagi/shared/styles/styles.dart';
 
 class SettingsScreen extends StatelessWidget

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hex_color/flutter_hex_color.dart';
 import 'package:softagi/shared/components/constants.dart';
-import 'package:softagi/shared/icon_broken.dart';
+import 'package:softagi/shared/styles/icon_broken.dart';
 import 'package:softagi/shared/styles/styles.dart';
 
 class HostProfile2Screen extends StatelessWidget {

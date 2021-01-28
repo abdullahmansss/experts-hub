@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "609409392598",
+    "project_id": "udemy-social-app-e2d84",
+    "storage_bucket": "udemy-social-app-e2d84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609409392598:android:1b73447d994ead2d950e77",
+        "android_client_info": {
+          "package_name": "com.linkup.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609409392598-8lm7rbb7umctfdk78qp6cfib5litskp9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.linkup.app",
+            "certificate_hash": "96C598380D7AAE808899D6DD072B07D5601B6656"
+          }
+        },
+        {
+          "client_id": "609409392598-movvmdgjbluufore22bfpac0c0tp9q6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2hBCzlp1nIkKtYM9IMcuR7zsFh35Wjck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609409392598-movvmdgjbluufore22bfpac0c0tp9q6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hex_color/flutter_hex_color.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:softagi/models/language/language_model.dart';
+import 'package:softagi/shared/localization/language_model.dart';
 import 'package:softagi/modules/notifications/notifications_screen.dart';
 import 'package:softagi/modules/on_board/on_board_screen.dart';
 import 'package:softagi/shared/cubit/cubit.dart';
 import 'package:softagi/shared/di/di.dart';
-import 'package:softagi/shared/icon_broken.dart';
+import 'package:softagi/shared/styles/icon_broken.dart';
 import 'package:softagi/shared/network/local/cache_helper.dart';
 import 'package:softagi/shared/styles/styles.dart';
 
@@ -131,6 +131,33 @@ Widget leadingButton(context, {bool color =false}) => IconButton(
         Navigator.pop(context);
       },
     );
+
+Widget defaultTextField({
+  @required String hint,
+  @required String validate,
+  @required TextInputType type,
+  @required BuildContext context,
+  Function onSubmit,
+  @required TextEditingController textEditingController,
+}) => TextFormField(
+  controller: textEditingController,
+  style: black14(),
+  keyboardType: type,
+  onFieldSubmitted: onSubmit,
+  validator: (value)
+  {
+    if (value.isEmpty)
+    {
+      return validate;
+    }
+    return null;
+  },
+  decoration: InputDecoration(
+    hintText: hint,
+    hintStyle: grey12(),
+    border: InputBorder.none,
+  ),
+);
 
 Widget defaultButton({
   @required Function function,

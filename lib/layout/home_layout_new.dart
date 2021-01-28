@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:softagi/shared/components/constants.dart';
-import 'package:softagi/shared/icon_broken.dart';
+import 'package:softagi/shared/styles/icon_broken.dart';
 import 'package:softagi/shared/styles/styles.dart';
 
 class HomeScreenNew extends StatefulWidget {

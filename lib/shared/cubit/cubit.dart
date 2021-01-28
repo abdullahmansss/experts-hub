@@ -1,9 +1,10 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:softagi/models/language/language_model.dart';
+import 'package:softagi/shared/localization/language_model.dart';
 import 'package:softagi/shared/cubit/states.dart';
 import 'package:softagi/shared/di/di.dart';
 import 'package:softagi/shared/network/local/cache_helper.dart';
@@ -18,9 +19,43 @@ class AppCubit extends Cubit<AppStates>
   String appFontFamily = 'Jannah';
   String currentAppLanguage = '';
 
+  Map homeData = {};
+
   bool isDark = false;
 
   TextDirection textDirection = TextDirection.rtl;
+
+  void getHomeData()
+  {
+    emit(AppStateLoading());
+
+    FirebaseFirestore.instance
+        .collection('home-sections')
+        .doc('home_image')
+        .get()
+        .then((value) {
+      homeData = value.data();
+      emit(AppStateGetHomeDataSuccess());
+    }).catchError((error) {
+      print(error.toString());
+      emit(AppStateGetHomeDataError());
+    });
+  }
+
+  Future<void> refreshHomeData() async
+  {
+    return await FirebaseFirestore.instance
+        .collection('home-sections')
+        .doc('home_image')
+        .get()
+        .then((value) {
+      homeData = value.data();
+      emit(AppStateRefreshHomeDataSuccess());
+    }).catchError((error) {
+      print(error.toString());
+      emit(AppStateGetHomeDataError());
+    });
+  }
 
   changeAppThemeMode()
   {
